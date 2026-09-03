@@ -1,0 +1,4147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050403">
+
+<title>AARAMBH 2026 | Ganpati Aagman</title>
+
+<!-- =========================================================
+     GOOGLE FONTS
+========================================================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --black:#050403;
+    --black2:#0a0705;
+    --black3:#100a06;
+
+    --gold:#e5a735;
+    --gold-light:#ffd878;
+    --gold-dark:#8f5c16;
+
+    --cream:#f8edcf;
+    --cream2:#d9c8a5;
+
+    --muted:#9e9077;
+
+    --border:rgba(221,160,50,.25);
+
+    --max:1450px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+        radial-gradient(
+            circle at 72% 25%,
+            rgba(125,55,10,.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 75%,
+            rgba(104,44,7,.09),
+            transparent 30%
+        ),
+        var(--black);
+
+    color:white;
+
+    font-family:"Inter",sans-serif;
+
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+section{
+    position:relative;
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#030201;
+
+    z-index:99999;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+
+}
+
+#loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.loader-symbol{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(231,169,53,.25);
+
+    border-top:2px solid var(--gold);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    animation:
+        spin 2s linear infinite;
+
+}
+
+.loader-symbol span{
+
+    animation:
+        spinReverse 2s linear infinite;
+
+    color:var(--gold-light);
+
+    font-size:28px;
+
+}
+
+.loader-text{
+
+    margin-top:22px;
+
+    font-family:"Cinzel",serif;
+
+    color:#c99a43;
+
+    letter-spacing:5px;
+
+    font-size:10px;
+
+}
+
+@keyframes spin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes spinReverse{
+
+    to{
+        transform:rotate(-360deg);
+    }
+
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    background:#d99b29;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 8px rgba(244,177,45,.8);
+
+    opacity:.35;
+
+    animation:
+        particleFloat linear infinite;
+
+}
+
+@keyframes particleFloat{
+
+    from{
+
+        transform:
+            translateY(110vh)
+            scale(.5);
+
+        opacity:0;
+
+    }
+
+    20%{
+        opacity:.6;
+    }
+
+    80%{
+        opacity:.35;
+    }
+
+    to{
+
+        transform:
+            translateY(-10vh)
+            scale(1.3);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.top-nav{
+
+    position:absolute;
+
+    top:22px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(1500px,84%);
+
+    height:70px;
+
+    border:
+
+        1px solid
+        rgba(198,139,38,.35);
+
+    border-radius:28px;
+
+    background:
+        rgba(9,7,5,.76);
+
+    backdrop-filter:blur(15px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 27px;
+
+    z-index:1000;
+
+}
+
+
+/* BRAND */
+
+.nav-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+}
+
+.brand-logo{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid #8d5c18;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#e3a63d;
+
+    font-family:"Cinzel",serif;
+
+    font-size:22px;
+
+    box-shadow:
+        inset 0 0 20px rgba(220,150,35,.08);
+
+}
+
+.brand-copy{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.brand-copy span{
+
+    color:#bd914b;
+
+    font-family:"Cinzel",serif;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+}
+
+.brand-copy strong{
+
+    color:#eee0be;
+
+    font-family:"Cinzel",serif;
+
+    font-size:17px;
+
+    letter-spacing:3px;
+
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+
+    display:flex;
+
+    gap:38px;
+
+    align-items:center;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#b9ad96;
+
+    font-size:13px;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#e4ae4c;
+
+}
+
+
+/* BLESSINGS */
+
+.blessing-btn{
+
+    border:
+
+        1px solid
+        rgba(207,143,31,.65);
+
+    border-radius:30px;
+
+    padding:13px 21px;
+
+    color:#e8c46e;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(102,61,14,.55),
+            rgba(26,15,5,.75)
+        );
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.blessing-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #a76b17,
+            #70420d
+        );
+
+    color:white;
+
+    box-shadow:
+        0 10px 30px rgba(192,119,20,.2);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+/* LARGE BACKGROUND GLOW */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:850px;
+
+    height:850px;
+
+    right:-160px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(194,112,15,.18),
+            rgba(104,43,4,.07) 42%,
+            transparent 70%
+        );
+
+    filter:blur(8px);
+
+    pointer-events:none;
+
+}
+
+
+/* SUBTLE RADIAL LINES */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    right:-180px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border-radius:50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            transparent 0 95px,
+            rgba(224,157,39,.035) 96px 97px
+        );
+
+    pointer-events:none;
+
+}
+
+
+/* HERO CONTAINER */
+
+.hero-container{
+
+    width:min(var(--max),84%);
+
+    margin:auto;
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:
+        51%
+        49%;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+/* =========================================================
+   LEFT HERO
+========================================================= */
+
+.hero-left{
+
+    padding-top:80px;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+/* COLLEGE LABEL */
+
+.college-label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:#a98242;
+
+    font-family:"Cinzel",serif;
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    margin-bottom:32px;
+
+}
+
+.college-label::before{
+
+    content:"";
+
+    width:55px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c18a30,
+            transparent
+        );
+
+}
+
+
+/* SANSKRIT */
+
+.sanskrit{
+
+    font-family:
+        "Noto Sans Devanagari",
+        "Arial Unicode MS",
+        sans-serif;
+
+    color:#d3a552;
+
+    font-size:14px;
+
+    margin-bottom:16px;
+
+}
+
+
+/* TITLE */
+
+.hero-title{
+
+    font-family:"Cinzel",serif;
+
+    font-weight:500;
+
+    line-height:.88;
+
+    letter-spacing:-4px;
+
+}
+
+.hero-title .white{
+
+    display:block;
+
+    color:#fff0cc;
+
+    font-size:
+        clamp(4.5rem,8vw,7.8rem);
+
+}
+
+.hero-title .gold{
+
+    display:block;
+
+    font-size:
+        clamp(4.5rem,8vw,7.8rem);
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffe08a,
+            #d69224 50%,
+            #985b0c
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+/* DESCRIPTION */
+
+.hero-description{
+
+    max-width:650px;
+
+    margin-top:43px;
+
+    color:#b8aa91;
+
+    line-height:1.9;
+
+    font-size:14px;
+
+}
+
+.hero-description strong{
+
+    color:#d4a354;
+
+}
+
+
+/* EVENT PILLS */
+
+.event-pills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:28px;
+
+}
+
+.event-pill{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:11px 16px;
+
+    border:
+
+        1px solid
+        rgba(184,126,29,.28);
+
+    border-radius:25px;
+
+    background:
+        rgba(15,10,6,.45);
+
+    color:#b9aa91;
+
+    font-size:11px;
+
+}
+
+.event-pill .icon{
+
+    color:#dda63c;
+
+    font-size:13px;
+
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:13px;
+
+    margin-top:34px;
+
+}
+
+.hero-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 25px;
+
+    border-radius:28px;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    transition:.35s;
+
+}
+
+.hero-btn.primary{
+
+    color:#160d03;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4c35d,
+            #b66d12
+        );
+
+    box-shadow:
+        0 15px 35px rgba(189,112,19,.16);
+
+}
+
+.hero-btn.primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 18px 45px rgba(189,112,19,.3);
+
+}
+
+.hero-btn.secondary{
+
+    border:
+        1px solid #946018;
+
+    color:#dba944;
+
+    background:
+        rgba(9,7,4,.55);
+
+}
+
+.hero-btn.secondary:hover{
+
+    transform:translateY(-3px);
+
+    background:
+        rgba(145,91,18,.12);
+
+}
+
+
+/* =========================================================
+   RIGHT LOGO
+========================================================= */
+
+.hero-right{
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    padding-top:65px;
+
+}
+
+
+/* LOGO LIGHT */
+
+.logo-light{
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(215,135,22,.17),
+            rgba(110,46,3,.07) 42%,
+            transparent 70%
+        );
+
+    filter:blur(8px);
+
+    animation:
+        logoGlow 5s ease-in-out infinite;
+
+}
+
+@keyframes logoGlow{
+
+    0%,100%{
+
+        transform:scale(.95);
+
+        opacity:.6;
+
+    }
+
+    50%{
+
+        transform:scale(1.06);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ROTATING RINGS */
+
+.logo-ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(198,136,32,.12);
+
+}
+
+.ring-1{
+
+    width:590px;
+
+    height:590px;
+
+    animation:
+        rotate 40s linear infinite;
+
+}
+
+.ring-2{
+
+    width:720px;
+
+    height:720px;
+
+    border-style:dashed;
+
+    opacity:.25;
+
+    animation:
+        rotateReverse 70s linear infinite;
+
+}
+
+@keyframes rotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes rotateReverse{
+
+    to{
+        transform:rotate(-360deg);
+    }
+
+}
+
+
+/* OFFICIAL LOGO */
+
+.hero-logo{
+
+    width:min(590px,92%);
+
+    height:auto;
+
+    object-fit:contain;
+
+    position:relative;
+
+    z-index:5;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(255,174,48,.72)
+        )
+        drop-shadow(
+            0 0 45px
+            rgba(202,111,9,.3)
+        );
+
+    animation:
+        logoFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-11px);
+    }
+
+}
+
+
+/* FALLBACK IF LOGO IS MISSING */
+
+.logo-fallback{
+
+    display:none;
+
+    text-align:center;
+
+    position:absolute;
+
+    z-index:6;
+
+}
+
+.logo-fallback .om{
+
+    font-size:110px;
+
+    color:#e5a735;
+
+}
+
+.logo-fallback p{
+
+    color:#dca73d;
+
+    font-family:"Cinzel",serif;
+
+    letter-spacing:4px;
+
+}
+
+
+/* =========================================================
+   DECORATIVE STARS
+========================================================= */
+
+.star{
+
+    position:absolute;
+
+    color:#9e6a20;
+
+    opacity:.3;
+
+    pointer-events:none;
+
+}
+
+.star.one{
+
+    top:27%;
+
+    right:9%;
+
+    font-size:17px;
+
+}
+
+.star.two{
+
+    bottom:24%;
+
+    right:18%;
+
+    font-size:11px;
+
+}
+
+.star.three{
+
+    top:34%;
+
+    left:45%;
+
+    font-size:9px;
+
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll{
+
+    position:absolute;
+
+    bottom:12px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:10;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:#756448;
+
+    font-size:8px;
+
+    letter-spacing:5px;
+
+}
+
+.scroll-line{
+
+    width:1px;
+
+    height:35px;
+
+    background:
+        linear-gradient(
+            #a77b32,
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   MANTRA
+========================================================= */
+
+.mantra{
+
+    text-align:center;
+
+    padding:18px;
+
+    border-top:
+        1px solid
+        rgba(201,141,36,.12);
+
+    border-bottom:
+        1px solid
+        rgba(201,141,36,.12);
+
+    background:
+        rgba(35,17,5,.35);
+
+    color:#d6a94f;
+
+    font-family:"Cormorant Garamond",serif;
+
+    letter-spacing:5px;
+
+    font-size:17px;
+
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.section{
+
+    padding:120px 0;
+
+}
+
+.container{
+
+    width:min(1150px,90%);
+
+    margin:auto;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.eyebrow{
+
+    color:#a87b32;
+
+    font-family:"Cinzel",serif;
+
+    font-size:9px;
+
+    letter-spacing:5px;
+
+    margin-bottom:13px;
+
+}
+
+.section-heading h2{
+
+    color:#e8bd61;
+
+    font-family:"Cinzel",serif;
+
+    font-size:
+        clamp(2rem,5vw,3.5rem);
+
+    font-weight:500;
+
+    letter-spacing:2px;
+
+}
+
+.section-heading p{
+
+    max-width:680px;
+
+    margin:18px auto 0;
+
+    color:#9e9079;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+}
+
+.gold-line{
+
+    width:100px;
+
+    height:1px;
+
+    margin:18px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b57a20,
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(117,47,5,.09),
+            transparent 55%
+        );
+
+}
+
+.about-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:55px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(204,146,36,.18);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(197,137,28,.045),
+            rgba(0,0,0,.2)
+        );
+
+    position:relative;
+
+}
+
+.about-card::before,
+.about-card::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    color:#bc8125;
+
+    font-size:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.about-card::before{
+    top:-12px;
+}
+
+.about-card::after{
+    bottom:-12px;
+}
+
+.about-card p{
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:#c9b99c;
+
+    font-size:
+        clamp(1.2rem,2.5vw,1.45rem);
+
+    line-height:1.7;
+
+}
+
+.about-card strong{
+
+    color:#dfad4e;
+
+}
+
+
+/* =========================================================
+   EVENT DETAILS
+========================================================= */
+
+.details-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.detail-card{
+
+    padding:42px 25px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(201,143,34,.18);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(189,126,20,.06),
+            rgba(0,0,0,.18)
+        );
+
+    transition:.35s;
+
+}
+
+.detail-card:hover{
+
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(225,163,46,.42);
+
+}
+
+.detail-icon{
+
+    font-size:32px;
+
+    margin-bottom:17px;
+
+}
+
+.detail-card h3{
+
+    color:#dda943;
+
+    font-family:"Cinzel",serif;
+
+    letter-spacing:2px;
+
+    font-size:15px;
+
+    margin-bottom:13px;
+
+}
+
+.detail-card p{
+
+    color:#a99a81;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown-section{
+
+    padding:100px 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(133,53,5,.13),
+            transparent 60%
+        );
+
+}
+
+.countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.time{
+
+    width:135px;
+
+    padding:27px 10px;
+
+    border:
+        1px solid
+        rgba(206,146,32,.25);
+
+    background:
+        rgba(9,7,4,.65);
+
+    text-align:center;
+
+}
+
+.time strong{
+
+    display:block;
+
+    font-family:"Cinzel",serif;
+
+    font-size:40px;
+
+    color:#edb949;
+
+}
+
+.time span{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#81735c;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+}
+
+
+/* =========================================================
+   CEREMONY
+========================================================= */
+
+.ceremony{
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(105,43,5,.05),
+            transparent
+        );
+
+}
+
+.timeline{
+
+    max-width:850px;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    left:31px;
+
+    width:1px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #85581b,
+            transparent
+        );
+
+}
+
+.timeline-item{
+
+    display:flex;
+
+    gap:28px;
+
+    margin-bottom:45px;
+
+    position:relative;
+
+}
+
+.timeline-icon{
+
+    min-width:63px;
+
+    width:63px;
+
+    height:63px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid
+        #8c5e1b;
+
+    background:#0a0704;
+
+    color:#e2a83c;
+
+    z-index:2;
+
+    font-size:23px;
+
+}
+
+.timeline-content{
+
+    padding-top:6px;
+
+}
+
+.timeline-content h3{
+
+    color:#dfad4b;
+
+    font-family:"Cinzel",serif;
+
+    font-size:17px;
+
+    letter-spacing:1px;
+
+    margin-bottom:9px;
+
+}
+
+.timeline-content p{
+
+    color:#9e917b;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   SCHEDULE
+========================================================= */
+
+.schedule-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.schedule-card{
+
+    display:grid;
+
+    grid-template-columns:110px 1fr;
+
+    border:
+        1px solid
+        rgba(201,143,34,.17);
+
+    background:
+        rgba(13,9,5,.6);
+
+    transition:.3s;
+
+}
+
+.schedule-card:hover{
+
+    border-color:
+        rgba(215,156,39,.4);
+
+}
+
+.schedule-time{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#e1ad47;
+
+    font-family:"Cinzel",serif;
+
+    font-size:13px;
+
+    border-right:
+        1px solid
+        rgba(201,143,34,.13);
+
+}
+
+.schedule-info{
+
+    padding:25px;
+
+}
+
+.schedule-info h3{
+
+    color:#d9b66c;
+
+    font-family:"Cinzel",serif;
+
+    font-size:15px;
+
+    margin-bottom:7px;
+
+}
+
+.schedule-info p{
+
+    color:#918570;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================================
+   MOMENTS
+========================================================= */
+
+.moments{
+
+    overflow:hidden;
+
+}
+
+.moment-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+}
+
+.moment{
+
+    height:280px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(215,155,40,.18);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(210,130,20,.18),
+            rgba(15,8,3,.9)
+        );
+
+}
+
+.moment::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,175,50,.22),
+            transparent 30%
+        );
+
+}
+
+.moment-content{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:25px;
+
+    background:
+        linear-gradient(
+            transparent 30%,
+            rgba(0,0,0,.8)
+        );
+
+}
+
+.moment-icon{
+
+    font-size:45px;
+
+    margin-bottom:auto;
+
+    padding-top:40px;
+
+    text-align:center;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(231,163,40,.6)
+        );
+
+}
+
+.moment h3{
+
+    color:#e5b655;
+
+    font-family:"Cinzel",serif;
+
+    font-size:15px;
+
+    margin-bottom:5px;
+
+}
+
+.moment p{
+
+    color:#9e9079;
+
+    font-size:11px;
+
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote{
+
+    min-height:470px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(157,67,6,.15),
+            transparent 60%
+        );
+
+}
+
+.quote-inner{
+
+    max-width:850px;
+
+}
+
+.quote-mark{
+
+    color:#9d671a;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:70px;
+
+    line-height:.5;
+
+}
+
+.quote blockquote{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:
+        clamp(1.8rem,4vw,3rem);
+
+    color:#d9c7a4;
+
+    line-height:1.4;
+
+}
+
+.quote strong{
+
+    color:#e2ad48;
+
+}
+
+
+/* =========================================================
+   VENUE
+========================================================= */
+
+.venue-card{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:55px 30px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(210,150,34,.2);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(200,138,29,.05),
+            rgba(0,0,0,.2)
+        );
+
+}
+
+.venue-icon{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+.venue-card h3{
+
+    font-family:"Cinzel",serif;
+
+    color:#e3b352;
+
+    font-size:25px;
+
+    letter-spacing:2px;
+
+}
+
+.venue-card p{
+
+    margin-top:15px;
+
+    color:#9f917a;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.map-btn{
+
+    display:inline-flex;
+
+    margin-top:27px;
+
+    padding:13px 25px;
+
+    border:
+        1px solid
+        #96631c;
+
+    color:#dca743;
+
+    text-decoration:none;
+
+    border-radius:25px;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+
+}
+
+.map-btn:hover{
+
+    background:#98631b;
+
+    color:#fff;
+
+}
+
+
+/* =========================================================
+   BLESSINGS SECTION
+========================================================= */
+
+.blessings{
+
+    min-height:520px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(208,120,10,.13),
+            transparent 60%
+        );
+
+}
+
+.blessings-symbol{
+
+    font-size:75px;
+
+    color:#e4ab3e;
+
+    filter:
+        drop-shadow(
+            0 0 30px
+            rgba(225,145,21,.45)
+        );
+
+    animation:
+        float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+.blessings h2{
+
+    font-family:"Cinzel",serif;
+
+    color:#e4b353;
+
+    font-size:
+        clamp(2rem,5vw,4rem);
+
+    margin-top:20px;
+
+}
+
+.blessings p{
+
+    max-width:650px;
+
+    margin:20px auto;
+
+    color:#a99b83;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:20px;
+
+    line-height:1.6;
+
+}
+
+.morya{
+
+    color:#f0c96e;
+
+    font-family:"Cinzel",serif;
+
+    letter-spacing:5px;
+
+    margin-top:30px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    border-top:
+        1px solid
+        rgba(208,147,31,.12);
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:#665944;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    line-height:2;
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+#toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:35px;
+
+    transform:
+        translate(-50%,20px);
+
+    background:
+        rgba(20,11,4,.94);
+
+    border:
+        1px solid
+        #9b671c;
+
+    color:#e8bf64;
+
+    padding:15px 25px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    z-index:9999;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.4s;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.5);
+
+}
+
+#toast.show{
+
+    opacity:1;
+
+    transform:
+        translate(-50%,0);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .top-nav{
+
+        width:92%;
+
+    }
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .hero-container{
+
+        grid-template-columns:1fr;
+
+        padding-top:120px;
+
+        text-align:center;
+
+    }
+
+    .hero-left{
+
+        padding-top:25px;
+
+    }
+
+    .college-label{
+
+        justify-content:center;
+
+    }
+
+    .hero-description{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+    .event-pills,
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-right{
+
+        min-height:470px;
+
+        padding-top:20px;
+
+    }
+
+    .hero-logo{
+
+        width:420px;
+
+    }
+
+    .ring-1{
+
+        width:450px;
+
+        height:450px;
+
+    }
+
+    .ring-2{
+
+        width:540px;
+
+        height:540px;
+
+    }
+
+    .details-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .moment-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .top-nav{
+
+        top:12px;
+
+        height:62px;
+
+        padding:0 14px;
+
+        border-radius:20px;
+
+    }
+
+    .brand-logo{
+
+        width:40px;
+
+        height:40px;
+
+        font-size:18px;
+
+    }
+
+    .brand-copy span{
+
+        font-size:8px;
+
+        letter-spacing:3px;
+
+    }
+
+    .brand-copy strong{
+
+        font-size:14px;
+
+    }
+
+    .blessing-btn{
+
+        padding:10px 14px;
+
+        font-size:0;
+
+    }
+
+    .blessing-btn:first-letter{
+
+        font-size:16px;
+
+    }
+
+    .hero-container{
+
+        width:90%;
+
+    }
+
+    .hero-title{
+
+        letter-spacing:-2px;
+
+    }
+
+    .hero-title .white,
+    .hero-title .gold{
+
+        font-size:4rem;
+
+    }
+
+    .college-label{
+
+        font-size:8px;
+
+        letter-spacing:3px;
+
+    }
+
+    .hero-description{
+
+        font-size:13px;
+
+        line-height:1.8;
+
+    }
+
+    .event-pills{
+
+        flex-direction:column;
+
+    }
+
+    .event-pill{
+
+        justify-content:center;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .hero-btn{
+
+        width:100%;
+
+    }
+
+    .hero-right{
+
+        min-height:350px;
+
+    }
+
+    .hero-logo{
+
+        width:310px;
+
+    }
+
+    .ring-1{
+
+        width:340px;
+
+        height:340px;
+
+    }
+
+    .ring-2{
+
+        width:420px;
+
+        height:420px;
+
+    }
+
+    .logo-light{
+
+        width:400px;
+
+        height:400px;
+
+    }
+
+    .section{
+
+        padding:85px 0;
+
+    }
+
+    .about-card{
+
+        padding:38px 22px;
+
+    }
+
+    .countdown{
+
+        gap:8px;
+
+    }
+
+    .time{
+
+        width:45%;
+
+    }
+
+    .time strong{
+
+        font-size:31px;
+
+    }
+
+    .schedule-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .moment-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .moment{
+
+        height:250px;
+
+    }
+
+    .timeline-item{
+
+        gap:17px;
+
+    }
+
+    .timeline-icon{
+
+        min-width:50px;
+
+        width:50px;
+
+        height:50px;
+
+    }
+
+    .timeline::before{
+
+        left:25px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     LOADER
+========================================================= -->
+
+<div id="loader">
+
+    <div class="loader-symbol">
+        <span>ॐ</span>
+    </div>
+
+    <div class="loader-text">
+        ENTERING AARAMBH
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     PARTICLES
+========================================================= -->
+
+<div id="particles"></div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="top-nav">
+
+    <a href="#home"
+       class="nav-brand"
+       style="text-decoration:none;">
+
+        <div class="brand-logo">
+            ॐ
+        </div>
+
+        <div class="brand-copy">
+            <span>AARAMBH</span>
+            <strong>2026</strong>
+        </div>
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#ceremony">
+            Ceremony
+        </a>
+
+        <a href="#schedule">
+            Schedule
+        </a>
+
+        <a href="#moments">
+            Moments
+        </a>
+
+        <a href="#venue">
+            Venue
+        </a>
+
+    </div>
+
+
+    <button
+        class="blessing-btn"
+        onclick="receiveBlessings()">
+
+        🙏 Receive Blessings
+
+    </button>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO / FIRST PAGE
+========================================================= -->
+
+<section
+    class="hero"
+    id="home">
+
+
+    <div class="star one">
+        ✦
+    </div>
+
+    <div class="star two">
+        ✦
+    </div>
+
+    <div class="star three">
+        ✦
+    </div>
+
+
+    <div class="hero-container">
+
+
+        <!-- =================================================
+             LEFT
+        ================================================== -->
+
+        <div class="hero-left">
+
+
+            <div class="college-label">
+                RAMA MEDICAL COLLEGE • HAPUR
+            </div>
+
+
+            <div class="sanskrit">
+                || श्री गणेशाय नमः ||
+            </div>
+
+
+            <h1 class="hero-title">
+
+                <span class="white">
+                    GANPATI
+                </span>
+
+                <span class="gold">
+                    AAGMAN
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A sacred beginning to
+                <strong>AARAMBH 2026.</strong>
+
+                Join the Rama Medical College family
+                as we welcome Vighnaharta with
+                devotion, joy and togetherness.
+
+            </p>
+
+
+            <!-- EVENT PILLS -->
+
+            <div class="event-pills">
+
+
+                <div class="event-pill">
+
+                    <span class="icon">
+                        ◷
+                    </span>
+
+                    <span>
+                        14 September 2026
+                    </span>
+
+                </div>
+
+
+                <div class="event-pill">
+
+                    <span class="icon">
+                        ●
+                    </span>
+
+                    <span>
+                        Rama Medical College, Hapur
+                    </span>
+
+                </div>
+
+
+                <div class="event-pill">
+
+                    <span class="icon">
+                        ॐ
+                    </span>
+
+                    <span>
+                        Ganpati Aagman
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="#ceremony"
+                    class="hero-btn primary">
+
+                    🙏
+                    Explore Ceremony
+
+                </a>
+
+
+                <a
+                    href="#schedule"
+                    class="hero-btn secondary">
+
+                    ◷
+                    View Schedule
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             RIGHT / OFFICIAL LOGO
+        ================================================== -->
+
+        <div class="hero-right">
+
+
+            <div class="logo-light"></div>
+
+            <div class="logo-ring ring-1"></div>
+
+            <div class="logo-ring ring-2"></div>
+
+
+            <!--
+                IMPORTANT:
+
+                Put your golden logo in the same folder
+                as this HTML file.
+
+                File name:
+                aarambh-logo-golden.png
+            -->
+
+            <img
+                src="aarambh-logo-golden.png"
+                alt="AARAMBH 2026 Golden Logo"
+                class="hero-logo"
+                onerror="showLogoFallback()"
+            >
+
+
+            <!-- FALLBACK -->
+
+            <div
+                class="logo-fallback"
+                id="logoFallback">
+
+                <div class="om">
+                    ॐ
+                </div>
+
+                <p>
+                    AARAMBH 2026
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- SCROLL -->
+
+    <div class="scroll">
+
+        <span>
+            SCROLL
+        </span>
+
+        <div class="scroll-line"></div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     MANTRA
+========================================================= -->
+
+<div class="mantra">
+
+    || GANPATI BAPPA MORYA ||
+
+</div>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+    class="section about"
+    id="about">
+
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                THE BEGINNING
+            </div>
+
+            <h2>
+                A Celebration Close To Our Hearts
+            </h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+
+        <div class="about-card reveal">
+
+
+            <p>
+
+                For all of us, Ganpati Bappa is not just
+                a festival — it is an emotion, a tradition,
+                and a beautiful reminder of home.
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                <strong>AARAMBH 2026</strong> marks the
+                beginning of our Ganeshotsav celebrations
+                at Rama Medical College, Hapur.
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                On 14 September, we come together to
+                welcome Vighnaharta with devotion,
+                happiness and the spirit of togetherness.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     EVENT DETAILS
+========================================================= -->
+
+<section
+    class="section"
+    id="details">
+
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                AARAMBH 2026
+            </div>
+
+            <h2>
+                The Sacred Occasion
+            </h2>
+
+            <p>
+                Everything you need to know about
+                the beginning of AARAMBH 2026.
+            </p>
+
+        </div>
+
+
+        <div class="details-grid">
+
+
+            <div class="detail-card reveal">
+
+                <div class="detail-icon">
+                    📅
+                </div>
+
+                <h3>
+                    DATE
+                </h3>
+
+                <p>
+                    Monday<br>
+                    <strong>
+                        14 September 2026
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <div class="detail-card reveal">
+
+                <div class="detail-icon">
+                    📍
+                </div>
+
+                <h3>
+                    VENUE
+                </h3>
+
+                <p>
+                    Laxmi Narayan Temple, Rama Medical College<br>
+                    Hapur, Uttar Pradesh
+                </p>
+
+            </div>
+
+
+            <div class="detail-card reveal">
+
+                <div class="detail-icon">
+                    🙏
+                </div>
+
+                <h3>
+                    OCCASION
+                </h3>
+
+                <p>
+                    Ganpati Aagman Ceremony<br>
+                    "AARAMBH 2026"
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     COUNTDOWN
+========================================================= -->
+
+<section
+    class="countdown-section">
+
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                THE WAIT BEGINS
+            </div>
+
+            <h2>
+                Bappa Is Coming
+            </h2>
+
+            <p>
+                Counting every moment until
+                Ganpati Bappa arrives.
+            </p>
+
+        </div>
+
+
+        <div class="countdown reveal">
+
+
+            <div class="time">
+
+                <strong id="days">
+                    00
+                </strong>
+
+                <span>
+                    DAYS
+                </span>
+
+            </div>
+
+
+            <div class="time">
+
+                <strong id="hours">
+                    00
+                </strong>
+
+                <span>
+                    HOURS
+                </span>
+
+            </div>
+
+
+            <div class="time">
+
+                <strong id="minutes">
+                    00
+                </strong>
+
+                <span>
+                    MINUTES
+                </span>
+
+            </div>
+
+
+            <div class="time">
+
+                <strong id="seconds">
+                    00
+                </strong>
+
+                <span>
+                    SECONDS
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     CEREMONY
+========================================================= -->
+
+<section
+    class="section ceremony"
+    id="ceremony">
+
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                THE SACRED AAGMAN
+            </div>
+
+            <h2>
+                Welcome Bappa
+            </h2>
+
+            <p>
+                A celebration of faith, tradition,
+                music and togetherness.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item reveal">
+
+
+                <div class="timeline-icon">
+                    🪔
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Gathering
+                    </h3>
+
+                    <p>
+                        Students and members of the
+                        Rama Medical College family
+                        gather together to begin the
+                        sacred celebration.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+
+                <div class="timeline-icon">
+                    🥁
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Ganpati Aagman
+                    </h3>
+
+                    <p>
+                        Welcome Ganpati Bappa with
+                        traditional festive energy,
+                        devotional chants and celebration.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+
+                <div class="timeline-icon">
+                    🌺
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Bappa's Welcome
+                    </h3>
+
+                    <p>
+                        Lord Ganesha is respectfully
+                        welcomed as we begin this
+                        year's beautiful tradition.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+
+                <div class="timeline-icon">
+                    🙏
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Aarti & Blessings
+                    </h3>
+
+                    <p>
+                        Come together in prayer and
+                        seek Bappa's blessings for
+                        happiness, wisdom and prosperity.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+
+                <div class="timeline-icon">
+                    🍬
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Prasad & Togetherness
+                    </h3>
+
+                    <p>
+                        Celebrate the beginning of
+                        AARAMBH with prasad, smiles
+                        and memories shared together.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SCHEDULE
+========================================================= -->
+
+<section
+    class="section"
+    id="schedule">
+
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                AARAMBH 2026
+            </div>
+
+            <h2>
+                Ceremony Schedule
+            </h2>
+
+            <p>
+                The sacred moments that make
+                Ganpati Aagman special.
+            </p>
+
+        </div>
+
+
+        <div class="schedule-grid">
+
+
+            <div class="schedule-card reveal">
+
+                <div class="schedule-time">
+                    ARRIVAL
+                </div>
+
+                <div class="schedule-info">
+
+                    <h3>
+                        Gathering of Students
+                    </h3>
+
+                    <p>
+                        Students come together and
+                        prepare for the arrival of Bappa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="schedule-card reveal">
+
+                <div class="schedule-time">
+                    AAGMAN
+                </div>
+
+                <div class="schedule-info">
+
+                    <h3>
+                        Ganpati Aagman
+                    </h3>
+
+                    <p>
+                        Welcome Vighnaharta with
+                        devotion, music and celebration.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="schedule-card reveal">
+
+                <div class="schedule-time">
+                    PUJA
+                </div>
+
+                <div class="schedule-info">
+
+                    <h3>
+                        Ganpati Puja
+                    </h3>
+
+                    <p>
+                        A sacred moment of prayers,
+                        devotion and blessings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="schedule-card reveal">
+
+                <div class="schedule-time">
+                    AARTI
+                </div>
+
+                <div class="schedule-info">
+
+                    <h3>
+                        Ganpati Aarti
+                    </h3>
+
+                    <p>
+                        Join together to offer prayers
+                        and seek Bappa's blessings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="schedule-card reveal">
+
+                <div class="schedule-time">
+                    PRASAD
+                </div>
+
+                <div class="schedule-info">
+
+                    <h3>
+                        Prasad Distribution
+                    </h3>
+
+                    <p>
+                        Conclude the ceremony with
+                        prasad and shared happiness.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="schedule-card reveal">
+
+                <div class="schedule-time">
+                    CELEBRATE
+                </div>
+
+                <div class="schedule-info">
+
+                    <h3>
+                        A New Tradition Begins
+                    </h3>
+
+                    <p>
+                        Carry the spirit of AARAMBH
+                        forward with the college family.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     MOMENTS
+========================================================= -->
+
+<section
+    class="section moments"
+    id="moments">
+
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                MEMORIES
+            </div>
+
+            <h2>
+                Moments of Aagman
+            </h2>
+
+            <p>
+                A visual space for the memories,
+                emotions and celebrations of AARAMBH.
+            </p>
+
+        </div>
+
+
+        <div class="moment-grid">
+
+
+            <div class="moment reveal">
+
+                <div class="moment-content">
+
+                    <div class="moment-icon">
+                        🪔
+                    </div>
+
+                    <h3>
+                        The First Diya
+                    </h3>
+
+                    <p>
+                        Lighting the beginning of
+                        a beautiful celebration.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="moment reveal">
+
+                <div class="moment-content">
+
+                    <div class="moment-icon">
+                        🥁
+                    </div>
+
+                    <h3>
+                        The Aagman
+                    </h3>
+
+                    <p>
+                        The sound and spirit of
+                        welcoming Bappa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="moment reveal">
+
+                <div class="moment-content">
+
+                    <div class="moment-icon">
+                        🌺
+                    </div>
+
+                    <h3>
+                        Bappa's Darshan
+                    </h3>
+
+                    <p>
+                        A moment of devotion and
+                        heartfelt prayers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     QUOTE
+========================================================= -->
+
+<section class="quote">
+
+
+    <div class="quote-inner reveal">
+
+        <div class="quote-mark">
+            “
+        </div>
+
+        <blockquote>
+
+            Every beautiful tradition begins
+            with one meaningful
+
+            <strong>
+                AARAMBH.
+            </strong>
+
+        </blockquote>
+
+        <div class="gold-line"></div>
+
+        <p style="color:#806e53;font-size:11px;letter-spacing:2px;">
+            A TRADITION WE BEGIN TOGETHER
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     VENUE
+========================================================= -->
+
+<section
+    class="section"
+    id="venue">
+
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                THE SACRED VENUE
+            </div>
+
+            <h2>
+                Where We Welcome Bappa
+            </h2>
+
+        </div>
+
+
+        <div class="venue-card reveal">
+
+
+            <div class="venue-icon">
+                📍
+            </div>
+
+
+            <h3>
+                Rama Medical College
+            </h3>
+
+
+            <p>
+
+                Hapur, Uttar Pradesh, India
+
+                <br><br>
+
+                <strong style="color:#d8aa4c;">
+                    14 September 2026
+                </strong>
+
+                <br>
+
+                Ganpati Aagman Ceremony
+
+            </p>
+
+
+            <a
+                class="map-btn"
+                href="https://www.google.com/maps/search/?api=1&query=Rama+Medical+College+Hapur"
+                target="_blank"
+                rel="noopener">
+
+                OPEN LOCATION
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL BLESSINGS
+========================================================= -->
+
+<section
+    class="blessings">
+
+
+    <div class="container reveal">
+
+
+        <div class="blessings-symbol">
+            ॐ
+        </div>
+
+
+        <h2>
+            Bring Bappa Home
+        </h2>
+
+
+        <p>
+
+            Let us come together and welcome
+            Vighnaharta with devotion, joy and
+            the spirit of togetherness.
+
+            <br><br>
+
+            Let "AARAMBH 2026" be the beginning
+            of a tradition that lasts forever.
+
+        </p>
+
+
+        <div class="gold-line"></div>
+
+
+        <div class="morya">
+
+            || GANPATI BAPPA MORYA ||
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    AARAMBH 2026
+    &nbsp; • &nbsp;
+    RAMA MEDICAL COLLEGE, HAPUR
+
+    <br>
+
+    GANPATI AAGMAN • 14 SEPTEMBER 2026
+
+    <br><br>
+
+    A CELEBRATION CLOSE TO OUR HEARTS
+
+<br><br>
+Created By @kaiwalya__ 🔱
+
+</footer>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div id="toast">
+    May Bappa bless you with wisdom,
+    happiness and prosperity. 🙏
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        document
+            .getElementById("loader")
+            .classList
+            .add("hide");
+
+    },1100);
+
+});
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+const particles =
+    document.getElementById("particles");
+
+for(let i=0;i<55;i++){
+
+    const p =
+        document.createElement("div");
+
+    p.className="particle";
+
+    p.style.left =
+        Math.random()*100+"%";
+
+    p.style.animationDuration =
+        (8 + Math.random()*15)+"s";
+
+    p.style.animationDelay =
+        (Math.random()*12)+"s";
+
+    const size =
+        Math.random()*2.5+1;
+
+    p.style.width=size+"px";
+    p.style.height=size+"px";
+
+    particles.appendChild(p);
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+
+        function(entries){
+
+            entries.forEach(function(entry){
+
+                if(entry.isIntersecting){
+
+                    entry.target
+                        .classList
+                        .add("visible");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(function(element){
+
+        revealObserver.observe(element);
+
+    });
+
+
+/* =========================================================
+   COUNTDOWN
+   14 SEPTEMBER 2026
+========================================================= */
+
+const eventDate =
+    new Date(
+        "2026-09-14T00:00:00+05:30"
+    ).getTime();
+
+
+function updateCountdown(){
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        eventDate - now;
+
+
+    if(difference <= 0){
+
+        document
+            .getElementById("days")
+            .textContent="00";
+
+        document
+            .getElementById("hours")
+            .textContent="00";
+
+        document
+            .getElementById("minutes")
+            .textContent="00";
+
+        document
+            .getElementById("seconds")
+            .textContent="00";
+
+        return;
+
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000*60*60*24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference %
+                (1000*60*60*24))
+            /
+            (1000*60*60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference %
+                (1000*60*60))
+            /
+            (1000*60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference %
+                (1000*60))
+            /
+            1000
+        );
+
+
+    document
+        .getElementById("days")
+        .textContent =
+        String(days).padStart(2,"0");
+
+
+    document
+        .getElementById("hours")
+        .textContent =
+        String(hours).padStart(2,"0");
+
+
+    document
+        .getElementById("minutes")
+        .textContent =
+        String(minutes).padStart(2,"0");
+
+
+    document
+        .getElementById("seconds")
+        .textContent =
+        String(seconds).padStart(2,"0");
+
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =========================================================
+   BLESSINGS BUTTON
+========================================================= */
+
+function receiveBlessings(){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },4000);
+
+}
+
+
+/* =========================================================
+   LOGO FALLBACK
+========================================================= */
+
+function showLogoFallback(){
+
+    const fallback =
+        document.getElementById(
+            "logoFallback"
+        );
+
+    fallback.style.display="block";
+
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navLinks =
+    document.querySelectorAll(
+        ".nav-links a"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        let current="";
+
+        sections.forEach(function(section){
+
+            const top =
+                section.offsetTop - 180;
+
+            if(
+                window.scrollY >= top
+            ){
+
+                current =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navLinks.forEach(function(link){
+
+            link.style.color =
+                "#b9ad96";
+
+            if(
+                link.getAttribute("href")
+                === "#"+current
+            ){
+
+                link.style.color =
+                    "#e4ae4c";
+
+            }
+
+        });
+
+    }
+);
+
+
+/* =========================================================
+   HERO PARALLAX
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        const scroll =
+            window.scrollY;
+
+        const heroLogo =
+            document.querySelector(
+                ".hero-logo"
+            );
+
+        const heroLeft =
+            document.querySelector(
+                ".hero-left"
+            );
+
+
+        if(
+            scroll <
+            window.innerHeight
+        ){
+
+            if(heroLogo){
+
+                heroLogo.style.transform =
+                    `translateY(${scroll * .08}px)`;
+
+            }
+
+
+            if(heroLeft){
+
+                heroLeft.style.transform =
+                    `translateY(${scroll * .035}px)`;
+
+            }
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SMOOTH NAVIGATION
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach(function(link){
+
+        link.addEventListener(
+            "click",
+            function(event){
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+                if(target){
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior:"smooth",
+                        block:"start"
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+</script>
+
+</body>
+</html>
